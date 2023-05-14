@@ -1,3 +1,4 @@
+#install the necessary packages
 install.packages("rtools")
 install.packages("tidyverse")
 install.packages("rvest")
@@ -15,12 +16,15 @@ library(rlist)
 library(magrittr)
 library(stringr)
 
+#defining the url for the scraper
 url <- "https://www.yelp.com/biz/katzs-delicatessen-new-york?sort_by=date_asc"
 
+#read the HTML data into dataframe
 page <- read_html(url)
 
 df_final <- list()
 
+#identify the page navigation element on Yelp and convert this to a number
 pageNums <- page %>% 
   html_elements(xpath = "//div[@aria-label='Pagination navigation']") %>%
   html_text() %>% 
@@ -28,14 +32,18 @@ pageNums <- page %>%
   str_remove('of ') %>% 
   as.numeric()
 
+#incrementing the page navigation element
 pageSequence <- seq(from = 0, to = (pageNums * 10)-10, by=10)
 
 for(i in pageSequence) {
   
+  #convering the url into an iterable function
   url <- sprintf("https://www.yelp.com/biz/katzs-delicatessen-new-york?start=%d&sort_by=date_asc", i)
   
+  #convert HTML element into dataframe
   page <- read_html(url)
   
+  #scraping the necessary elements
   # usernames <- page %>%
   #   html_elements(xpath = "//div[starts-with(@class, ' user-passport')]") %>%
   #   html_elements(xpath = ".//a[starts-with(@href, '/user_details')]") %>%
@@ -83,6 +91,7 @@ for(i in pageSequence) {
     html_text() %>%
     as.numeric()
 
+#putting the scrapped elements into a dataframe
   df_new <- list (date = the_dates,
                   location = locations,
                   rating = ratings,
