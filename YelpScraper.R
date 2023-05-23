@@ -31,7 +31,7 @@ pageNums <- page %>%
   str_remove('of ') %>% 
   as.numeric()
 
-pageSequence <- seq(from = 9640, to = (pageNums * 10)-10, by=10)
+pageSequence <- seq(from = 0, to = (pageNums * 10)-10, by=10)
 
 for(i in pageSequence) {
   
