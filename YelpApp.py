@@ -11,7 +11,7 @@ st.sidebar.title("Sentiment Analysis of Yelp Reviews")
 st.markdown("This application is a Streamlit dashboard to analyze the sentiment of Yelp reviews 🥪")
 st.sidebar.markdown("Streamlit Analysis 🥪")
 
-DATA_URL = (r"C:\Users\kevin\OneDrive\Documents\KATZReviewFinalJul2005May2023v3.csv")
+DATA_URL = ("https://github.com/knwoke/YelpWebScraper/blob/main/KATZReviewFinalJul2005May2023v3.csv")
 
 @st.cache_data(persist=True)
 def load_data():
