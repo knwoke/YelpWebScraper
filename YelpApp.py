@@ -13,7 +13,7 @@ st.sidebar.markdown("Streamlit Analysis 🥪")
 
 col_names = ["username", "date", "Month", "Day", "Year", "City NOT TRIM"," State/Foreign Country NOT TRIM", "Coordinates Old", "rating",	"numberoffollowers", "numberofreviews", "City", "State", "City", "State", "Coordinates New", "LAT", "LON", "comment"]
 
-DATA_URL = ("https://github.com/knwoke/YelpWebScraper/blob/main/KATZReviewFinalJul2005May2023v3.csv")
+DATA_URL = ("https://github.com/knwoke/YelpWebScraper/blob/main/KATZReviewFinalJul2005May2023v3.csv", names = col_names)
 
 @st.cache_data(persist=True)
 def load_data():
