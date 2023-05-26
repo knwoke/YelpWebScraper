@@ -15,7 +15,7 @@ DATA_URL = ("https://github.com/knwoke/YelpWebScraper/blob/main/KATZReviewFinalJ
 
 @st.cache_data(persist=True)
 def load_data():
-    data = pd.read_csv(DATA_URL)
+    data = pd.read_csv(DATA_URL, , lineterminator='\n')
     data['date'] = pd.to_datetime(data['date'])
     return data
 
