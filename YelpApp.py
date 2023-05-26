@@ -11,6 +11,8 @@ st.sidebar.title("Sentiment Analysis of Yelp Reviews")
 st.markdown("This application is a Streamlit dashboard to analyze the sentiment of Yelp reviews 🥪")
 st.sidebar.markdown("Streamlit Analysis 🥪")
 
+col_names = ["username", "date", "Month", "Day", "Year", "City NOT TRIM"," State/Foreign Country NOT TRIM", "Coordinates Old", "rating",	"numberoffollowers", "numberofreviews", "City", "State", "City", "State", "Coordinates New", "LAT", "LON", "comment"]
+
 DATA_URL = ("https://github.com/knwoke/YelpWebScraper/blob/main/KATZReviewFinalJul2005May2023v3.csv")
 
 @st.cache_data(persist=True)
