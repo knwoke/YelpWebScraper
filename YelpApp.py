@@ -21,7 +21,7 @@ def load_data():
 
 data = load_data()
 
-st.sidebar.subheader("Show random review")
+st.sidebar.subheader("Select rating below to show a random review")
 random_review = st.sidebar.radio('Rating', (1, 2, 3, 4, 5))
 st.sidebar.markdown(data.query('rating == @random_review')[["comment"]].sample(n=1).iat[0,0])
 
