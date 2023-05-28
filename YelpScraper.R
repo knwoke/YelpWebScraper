@@ -34,6 +34,8 @@ pageNums <- page %>%
   str_remove('of ') %>% 
   as.numeric()
 
+#create a sequence based on the number of pages
+#used in the URL to move from one page to the other 
 pageSequence <- seq(from = 0, to = (pageNums * 10)-10, by=10)
 
 for(i in pageSequence) {
