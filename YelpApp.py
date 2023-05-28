@@ -50,7 +50,7 @@ if not st.sidebar.checkbox("Close", True, key='2'):
     if st.sidebar.checkbox("Show raw data", False):
         st.write(modified_data)
 
-st.sidebar.subheader("Breakdown Yelp reviews by New York Borough")
+st.sidebar.subheader("Breakdown Yelp reviews by New York City borough")
 choice = st.sidebar.multiselect('Pick borough', ('Queens', 'Manhattan', 'New York', 'Brooklyn', 'Staten Island', 'Bronx'))
 
 if len(choice) > 0:
