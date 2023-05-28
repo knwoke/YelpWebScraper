@@ -59,7 +59,7 @@ if len(choice) > 0:
     facet_col='rating', labels={'rating': 'rating'}, height=600, width=800)
     st.plotly_chart(fig_choice)
     
-st.sidebar.header("Word Cloud")
+st.sidebar.header("Word cloud by rating")
 word_rating = st.sidebar.radio('Display word cloud for what rating?', (1, 2, 3, 4, 5))
 
 if not st.sidebar.checkbox("Close", True, key='3'):
