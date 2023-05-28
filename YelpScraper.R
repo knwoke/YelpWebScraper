@@ -17,13 +17,16 @@ library(rlist)
 library(magrittr)
 library(stringr)
 
+#define URL to scrape
 url <- "https://www.yelp.com/biz/katzs-delicatessen-new-york?sort_by=date_asc"
 #download.file(url, destfile = "scrapedpage.html", quiet=TRUE)
 
+#convert URL into scrappable object
 page <- read_html(url)
 
 df_final <- list()
 
+#define pagination element
 pageNums <- page %>% 
   html_elements(xpath = "//div[@aria-label='Pagination navigation']") %>%
   html_text() %>% 
